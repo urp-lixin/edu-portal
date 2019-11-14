@@ -1,0 +1,162 @@
+.bizTypeSwitcher .modal-dialog {
+  width: 30%;
+}
+
+.bizTypeSwitcher .close > span,
+.bizTypeSwitcher .modal-header > h4 {
+  color: #fff;
+}
+
+.bizTypeSwitcher .biz-type-button {
+  padding-top: 0px;
+}
+.bizTypeSwitcher .biz-types {
+  margin-bottom: -15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.bizTypeSwitcher .biz-types > .list-group-item {
+  font-size: 21px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+.bizTypeSwitcher .biz-types > .list-group-item:first-child {
+  border-top: none!important;
+  border-radius: 0px!important;
+}
+
+.bizTypeSwitcher .biz-types > .list-group-item:hover {
+  color: #428bca;
+}
+.bizTypeSwitcher .biz-types > .list-group-item.selected {
+  color: #428bca;
+  background-color: #eee;
+}
+
+
+header.e-header .e-navbar-nav-3 .role-change > .role-change-div {
+  background-color: #22B585;
+  border-radius: 4px;
+  padding: 0px 6px;
+}
+
+#content {
+  margin: 20px
+}
+
+#content a{
+  text-decoration:none
+}
+#shortcutx{
+  background-color: #F2F2F2;
+  min-height: 350px;
+  padding: 10px;
+  margin-top: 10px;
+}
+#shortcutx .shortcutDiv{
+  width: 160px;
+  height: 60px;
+  background-color: #3F5D7F;
+  color: white;
+  float: left;
+  margin: 5px;
+  line-height: 60px;
+  cursor: pointer;
+}
+#menuBasket{
+  background-color: #e4e4e4;
+}
+#shortcutx p{
+  font-size: 20px;
+}
+
+#shortcutx #shortcutConfig{
+  margin: 5px 0;
+  font-size: 20px;
+  float: right;
+  color: #3F5D7F;
+  cursor: pointer;
+}
+.modalMenu{
+  border: 1px solid #7d7d7d;
+  margin: 10px;
+  height: 300px;
+  overflow-y: auto
+
+}
+
+#teachWeek {
+  min-height: 70px;
+  margin: 10px;
+  font-size: 35px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 70px;
+}
+
+#lastLoginInfo {
+  margin-top: 10px;
+}
+#lastLoginTitle{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#lastLoginInfo label{
+  color: #00b3ee;
+}
+#lastLoginInfo p{
+  display: inline;
+}
+
+#lastLoginInfo div {
+  padding-top: 5px;
+}
+
+#loginCount {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+#loginCount label{
+  font-size: 50px;
+  color: #00b3ee;
+}
+.view{
+  background-color: white;
+  margin: 5px;
+}
+.view label{
+  list-style-type: none;
+  color: #00b3ee;
+}
+.view .destroy{
+  padding:0;
+  width: 40px;
+  height: 30px;
+  float: right;
+  color: red;
+  text-align: right;
+  cursor: pointer;
+
+}
+#menuList table tr{
+  margin: 10px;
+}
+#menuList table .tdCheckbox{
+  display: inline;
+}
+#welcomeTitle{
+  text-align: left;
+  font-size: 36px;
+  font-weight: 200;
+  margin: 20px 40px 20px
+}
+.toolbarView{
+  min-height: 30px;
+}
+.content-left{
+  background-color: #F2F2F2;
+  min-height: 350px;
+  margin-top: 10px;
+}

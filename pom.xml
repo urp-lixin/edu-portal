@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.openurp</groupId>
+    <artifactId>openurp-parent</artifactId>
+    <version>0.3.11</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.openurp.lixin.platform</groupId>
+  <artifactId>lixin-platform-parent</artifactId>
+  <version>0.0.9-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Lixin Platform</name>
+
+  <properties>
+    <bundle.symbolicName>net.openurp.lixin.platform.parent</bundle.symbolicName>
+    <bundle.namespace>net.openurp.lixin.platform.cas</bundle.namespace>
+    <openurp.app.version>0.1.25</openurp.app.version>
+    <openurp.platform.version>0.2.31-SNAPSHOT</openurp.platform.version>
+  </properties>
+
+  <modules>
+    <module>cas</module>
+    <module>portal</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.openurp.app</groupId>
+        <artifactId>openurp-app-web</artifactId>
+        <version>${openurp.app.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openurp.app</groupId>
+        <artifactId>openurp-app-cas</artifactId>
+        <version>${openurp.app.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.openurp.platform</groupId>
+        <artifactId>openurp-platform-core</artifactId>
+        <version>${openurp.platform.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

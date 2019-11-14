@@ -1,0 +1,62 @@
+
+.info-page {
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+}
+.info-page dt {
+    float: left;
+    width: 160px;
+    padding: 8px 0;
+    overflow: hidden;
+    clear: left;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.info-page dd {
+    padding: 8px 0;
+}
+.info-page dt:after {
+    padding-left: 10px;
+    content: ":";
+}
+.info-page dd:not(.image):after {
+    content: "\00a0";
+}
+.info-page dd table {
+    width: 80%;
+    margin-bottom: 0px;
+}
+
+.top-bar h2.info-title {
+    display: table-cell;
+    width: 90%;
+    vertical-align: top;
+}
+
+.top-bar {
+    display: table;
+    width: 100%;
+    margin: 20px auto 0px auto;
+    padding-bottom: 10px;
+}
+
+.top-bar .back {
+    display: table-cell;
+    vertical-align: top;
+    float: right;
+}
+
+.form-required-mark:after {
+    content: "*";
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 5px;
+    position: absolute;
+}
+
+.index-horizontal {
+    padding-top: 15px;
+}

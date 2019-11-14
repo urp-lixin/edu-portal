@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<mvc>
+  <static>
+    <bundle name="urp" version="default"/>
+    <bundle name="cryptojs" version="3.1.2"/>
+    <bundle name="virtual-keyboard" version="1.26.5"/>
+  </static>
+  <profile name="lixin" package="net.openurp.lixin.platform.cas.web.action">
+    <url path="/" suffix=""  style="seo" />
+    <interceptors>
+      <interceptor name="web.Interceptor.security"/>
+    </interceptors>
+  </profile>
+</mvc>

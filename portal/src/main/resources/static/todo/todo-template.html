@@ -1,0 +1,24 @@
+<script type="text/template" id="item-undone">
+  <td width="5%"><input type="checkbox" class="toggle"/></td>
+  <td width="45%" class="table-nowrap"><%- title %><br/>
+    <span class="todo-description"><%- description %></span>
+  </td>
+  <td width="30%"><%- createDateTime %>创建</td>
+  <td width="10%">
+    <% if(uri) { %>
+      <i class="fa fa-external-link handle"></i>
+    <% } %>
+  </td>
+  <td width="10%"><i class="fa fa-hand-o-right assign"></i></td>
+</script>
+<script type="text/template" id="item-buttons">
+  <button class="btn btn-primary hideDone"><%= undoCount %>个已完成待办</button>
+  <button class="btn btn-default clearDone"><i class="fa fa-trash-o"></i>清空已完成</button>
+</script>
+<script type="text/template" id="item-done">
+  <td width="5%"><input type="checkbox" class="toggle" checked="checked"/></td>
+  <td width="45%" class="table-nowrap"><span class="todo-title"><%- title %></span><br/>
+    <span class="todo-description"><%- description %></span>
+  </td>
+  <td width="30%">于<%- doneDateTime %>完成</td>
+</script>
