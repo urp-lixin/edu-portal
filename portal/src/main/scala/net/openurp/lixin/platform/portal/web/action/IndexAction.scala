@@ -20,6 +20,7 @@ package net.openurp.lixin.platform.portal.web.action
 
 import org.beangle.commons.codec.digest.Digests
 import org.beangle.commons.collection.Collections
+import org.beangle.commons.net.http.HttpUtils
 import org.beangle.data.dao.{EntityDao, OqlBuilder}
 import org.beangle.security.Securities
 import org.beangle.security.realm.cas.CasConfig
@@ -69,6 +70,11 @@ class IndexAction extends ActionSupport with ServletSupport {
     val finalApps = allApps.toList
 
     put("apps", finalApps.sortBy(_.indexno))
+
+    val url = Urp.api + "/platform/user/profiles/" + Securities.user + ".json?domain=edu&resolved=1";
+    val profiles = HttpUtils.getText(url).orNull;
+    put("profiles", profiles)
+
     forward()
   }
 

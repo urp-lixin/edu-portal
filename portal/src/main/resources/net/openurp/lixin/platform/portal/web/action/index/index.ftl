@@ -86,7 +86,7 @@
       });
 
       $(document).ajaxError(function (event, request) {
-        
+
         if (request.responseText && request.status == 200 && request.statusText == "parsererror") {
           window.location.href = self.location.href;
         }
@@ -184,24 +184,9 @@
           </li>
         </ul>
 
-        <ul class="nav navbar-nav navbar-right e-navbar-nav-3">
-
-          <li>
-            [#--
-            <a class="role-change" href="#">
-              <div class="role-change-div">
-                <i class="fa fa-exchange"></i>
-                <span>当前管理业务:非教学业务</span>
-              </div>
-            </a>
-            --]
-          </li>
-
-          <li class="dropdown" id="accountManagement"><a data-toggle="dropdown" class="dropdown-toggle" href="#">
-			  <i class="fa fa-user personName">${user.description}</i>  <b class="caret"></b>
-			</a>
-		  </li>
-
+        <div class="navbar-custom-menu">
+         <ul class="nav navbar-nav navbar-right e-navbar-nav-3">
+          <li class="dropdown" id="accountManagement"><a data-toggle="dropdown" class="dropdown-toggle" href="#"> <i class="fa fa-user personName">${user.description}</i><b class="caret"></b> </a></li>
           <li class="dropdown" style="display: none">
             <a id="show-todo" data-toggle="collapse" style="font-size: 19px" class="dropdown-toggle" href="#" role="button" aria-expanded="false">
               <i class="fa fa-list-ul"></i>
@@ -216,7 +201,7 @@
           </li>
 
         </ul>
-
+        </div>
       </div>
       <!-- /.navbar-collapse -->
 
@@ -322,6 +307,8 @@
 <script src="${base}/static/todo/js/todo.js"></script>
 <script src="${base}/static/eams-ui/js/require.js"></script>
 <script src="${base}/static/home/js/main.js"></script>
+ ${b.script("openurp-default","js/urpnav.js")}
+ ${b.script("openurp-default","js/urp.js")}
 <script>
   $(function () {
     var bizTypes = [{'defaultCampusAssoc':null,'id':1,'name':'\u975E\u6559\u5B66\u4E1A\u52A1','nameEn':'System Ops','nameZh':'\u975E\u6559\u5B66\u4E1A\u52A1','transient':false},{'defaultCampusAssoc':null,'id':2,'name':'\u672C\u79D1','nameEn':'Undergraduate','nameZh':'\u672C\u79D1','transient':false}];
@@ -343,8 +330,26 @@
   var iframeHeight = visibleWindowHeight - headerHeight - footerHeight;
 
   $("#home-page").css({height: iframeHeight, overflow: "auto"});
-</script>
-
+  var eduProjects = new UrpEduProjects(${profiles});
+    function changeProject(id){
+       eduProjects.newChangeProject(id);
+    }
+    eduProjects.newChangeProject=function(id){
+          for(var i=0;i<this.projects.length;i++){
+            if(this.projects[i].id==id){
+              var URP_EDU=encodeURIComponent('{"projectId":'+id+'}')
+              var exdate=new Date();
+              exdate.setDate(exdate.getDate()+180);
+              var cookie_value="URP_EDU="+URP_EDU+";path=/edu/;expires="+exdate.toUTCString();
+              console.log(cookie_value);
+              document.cookie=cookie_value;
+              jQuery('#project_switcher').html(this.projects[i].name + '<span class="caret"></span>');
+              return this.projects[i];
+              break;
+            }
+          }
+        }
+  </script>
 </body>
 </html>
 
