@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.platform.cas.service
+package net.openurp.lixin.platform.oauth2.service
 
 import com.google.gson.Gson
 import org.beangle.commons.collection.Collections
@@ -79,7 +79,7 @@ class OAuth2ServiceImpl(val config: OAuth2Config) extends Logging {
   }
 
   private def getData(url: String): Map[String, String] = {
-    var res = HttpUtils.getText(url).orNull
+    var res = HttpUtils.getText(url).getOrElse(null)
     res = Strings.trim(res)
     if ("[false]".equals(res)) {
       logger.error(s"url :$url get $res")

@@ -6,7 +6,7 @@
     <module class="org.openurp.platform.cas.DaoRealmModule"/>
     <module class="org.openurp.platform.cas.SessionModule"/>
     <module class="org.openurp.platform.cas.DaoModule"/>
-    <module class="org.openurp.platform.cas.DBLdapCredentialsModule"/>
+    <module class="org.openurp.platform.cas.CredentialModule"/>
 
     <module class="org.openurp.platform.user.service.DefaultModule"/>
     <module class="org.openurp.platform.config.service.DefaultModule"/>
@@ -14,7 +14,6 @@
     <module class="org.openurp.platform.session.service.DefaultModule"/>
   </container>
   <container name="web">
-    <module class="net.openurp.lixin.platform.cas.web.DefaultModule"/>
     <module class="org.openurp.platform.cas.WebModule"/>
   </container>
 </cdi>

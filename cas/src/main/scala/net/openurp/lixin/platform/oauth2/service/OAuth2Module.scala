@@ -16,22 +16,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.openurp.lixin.platform.cas.web
+package net.openurp.lixin.platform.oauth2.service
 
 import java.io.FileInputStream
 
-import net.openurp.lixin.platform.cas.service.{OAuth2Config, OAuth2ServiceImpl}
-import net.openurp.lixin.platform.cas.web.action.IndexAction
 import org.beangle.cdi.bind.BindModule
 import org.openurp.app.UrpApp
-import net.openurp.lixin.platform.cas.service.{OAuth2Config, OAuth2ServiceImpl}
 
 /**
  * @author chaostone
  */
-class DefaultModule extends BindModule {
-  override def binding() {
-    bind(classOf[IndexAction])
+class OAuth2Module extends BindModule {
+  override def binding(): Unit = {
+    //    bind(classOf[IndexAction])
     UrpApp.getUrpAppFile foreach { file =>
       val is = new FileInputStream(file)
       val app = scala.xml.XML.load(is)

@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.openurp.lixin.platform.cas.service
+package net.openurp.lixin.platform.oauth2.service
 
 /**
  * OAuth2Config

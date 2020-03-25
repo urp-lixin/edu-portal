@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="refresh" content="0;url=${portal}">
+  <META http-equiv="refresh" content="0;URL=/portal/">
 </head>
 <body>
-  正在跳转到首页...
+  登录成功,正跳转至首页...
 </body>
 </html>

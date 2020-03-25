@@ -72,7 +72,7 @@ class IndexAction extends ActionSupport with ServletSupport {
     put("apps", finalApps.sortBy(_.indexno))
 
     val url = Urp.api + "/platform/user/profiles/" + Securities.user + ".json?domain=edu&resolved=1";
-    val profiles = HttpUtils.getText(url).orNull;
+    val profiles = HttpUtils.getText(url).getOrElse(null)
     put("profiles", profiles)
 
     forward()

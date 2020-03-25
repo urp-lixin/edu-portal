@@ -37,12 +37,13 @@
             </div>
 
             <div class="form-group">
-              <label for="password">密码</label>
-              <input id="password" value="" name="password" class="form-control" tabindex="2" autocomplete="new-password" type="password">
+              <label for="password_text">密码</label>
+              <input id="password_text" name="password_text"  tabindex="2" type="password"  class="form-control"  autocomplete="off" placeholder="密码"/>
+              <input name="password" type="hidden"/>
             </div>
 
             <div class="form-group">
-            [#if config.enableCaptcha]
+            [#if setting.enableCaptcha]
                 <label for="captcha_response">验证码</label>
                 <input id="captcha_response" name="captcha_response" tabindex="4" type="text" style="width:50px;" placeholder="验证码"/>
                 <img src="${b.url("!captcha")}?t=${current_timestamp}" id="captcha_image" style="vertical-align:top;margin-top:1px;border:0px" width="90" height="25"  title="点击更换" onclick="change_captcha()">
@@ -76,17 +77,21 @@ ${b.script("cryptojs","components/mode-ecb.js")}
         if(!form['username'].value){
             alert("用户名称不能为空");return false;
         }
-        if(!form['password'].value){
+        if(!(/^\w+$/.test(form['username'].value))){
+            alert("用户名中只能包含数字,字母");return false;
+        }
+        if(!form['password_text'].value){
             alert("密码不能为空");return false;
         }
-        [#if config.enableCaptcha]
+        [#if setting.enableCaptcha]
         if(!form['captcha_response'].value){
             alert("验证码不能为空");return false;
         }
         [/#if]
         try{
-        var encryptedData = CryptoJS.AES.encrypt(form['password'].value, key, {mode: CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
-        form['password'].value=("?"+encryptedData.ciphertext);
+          var encryptedData = CryptoJS.AES.encrypt(form['password_text'].value, key, {mode: CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+          form['password_text'].disabled=true;
+          form['password'].value=("?"+encryptedData.ciphertext);
         }catch(e){alert(e);return false;}
         return true;
     }
