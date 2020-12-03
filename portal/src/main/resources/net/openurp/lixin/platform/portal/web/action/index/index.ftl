@@ -330,25 +330,6 @@
   var iframeHeight = visibleWindowHeight - headerHeight - footerHeight;
 
   $("#home-page").css({height: iframeHeight, overflow: "auto"});
-  var eduProjects = new UrpEduProjects(${profiles});
-    function changeProject(id){
-       eduProjects.newChangeProject(id);
-    }
-    eduProjects.newChangeProject=function(id){
-          for(var i=0;i<this.projects.length;i++){
-            if(this.projects[i].id==id){
-              var URP_EDU=encodeURIComponent('{"projectId":'+id+'}')
-              var exdate=new Date();
-              exdate.setDate(exdate.getDate()+180);
-              var cookie_value="URP_EDU="+URP_EDU+";path=/edu/;expires="+exdate.toUTCString();
-              console.log(cookie_value);
-              document.cookie=cookie_value;
-              jQuery('#project_switcher').html(this.projects[i].name + '<span class="caret"></span>');
-              return this.projects[i];
-              break;
-            }
-          }
-        }
   </script>
 </body>
 </html>

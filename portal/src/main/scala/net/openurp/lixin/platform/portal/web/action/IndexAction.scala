@@ -89,7 +89,13 @@ class IndexAction extends ActionSupport with ServletSupport {
 
   private def getUser: User = {
     val userCode = Securities.user
-    userService.get(userCode).get
+    val cache = OqlBuilder.from(classOf[User], "u").where("u.code=:code", userCode).cacheable()
+    entityDao.search(cache).headOption match {
+//    userService.get(userCode) match {
+      case Some(u) => u
+      case None => println("Cannot find user for " + userCode);
+        throw new RuntimeException("Cannot find user for " + userCode)
+    }
   }
 
 }

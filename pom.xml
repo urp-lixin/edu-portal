@@ -2,7 +2,7 @@
   <parent>
     <groupId>org.openurp</groupId>
     <artifactId>openurp-parent</artifactId>
-    <version>0.3.19</version>
+    <version>0.3.20</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.openurp.lixin.platform</groupId>
@@ -14,8 +14,8 @@
   <properties>
     <bundle.symbolicName>net.openurp.lixin.platform.parent</bundle.symbolicName>
     <bundle.namespace>net.openurp.lixin.platform.cas</bundle.namespace>
-    <openurp.app.version>0.1.30</openurp.app.version>
-    <openurp.platform.version>0.3.0</openurp.platform.version>
+    <openurp.app.version>0.1.31</openurp.app.version>
+    <openurp.platform.version>0.3.1</openurp.platform.version>
   </properties>
 
   <modules>
