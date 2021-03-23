@@ -31,6 +31,7 @@
             <!-- 避免自动填充密码 -->
 		  [#if Parameters['service']??]<input type="hidden" name="service" value="${Parameters['service']}">[/#if]
 			[#if Parameters['sid_name']??]<input type="hidden" name="sid_name" value="${Parameters['sid_name']}">[/#if]
+			[#if Parameters['local']??]<input type="hidden" name="local" value="${Parameters['local']}">[/#if]
             <div class="form-group">
               <label for="username">用户名</label>
               <input value="${Parameters['username']!}" id="username" name="username"  class="form-control" tabindex="1" autocomplete="nope" type="text">
