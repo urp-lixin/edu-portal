@@ -146,9 +146,16 @@ class CasEntryPoint(val config: CasConfig) extends EntryPoint {
     localLoginStrategy.isLocalLogin(req, ae)
   }
 
+  /**
+   * 这里增加了是否gateway的检测
+   * @param request
+   * @param response
+   */
   override def remoteLogin(request: HttpServletRequest, response: HttpServletResponse): Unit = {
     val localUrl = this.localLoginUrl(request)
-    CookieUtils.addCookie(request, response, "CAS_" + CasConfig.ServiceName, localUrl, request.getContextPath + "/", 1 * 60)
+    if (config.gateway) {
+      CookieUtils.addCookie(request, response, "CAS_" + CasConfig.ServiceName, localUrl, request.getContextPath + "/", 1 * 60)
+    }
     response.sendRedirect(this.casLoginUrl(localUrl))
   }
 }
